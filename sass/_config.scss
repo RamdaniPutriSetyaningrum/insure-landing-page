@@ -1,0 +1,47 @@
+// Colors
+$darkViolet-bg: hsl(256, 26%, 20%);
+$grayishBlue: hsl(216, 30%, 68%);
+$veryDarkViolet: hsl(270, 9%, 17%);
+$darkGrayishViolet: hsl(273, 4%, 51%);
+$veryLightGray: hsl(0, 0%, 98%);
+// Fonts
+$headingsFont: 'DM Serif Display', sans-serif; // weight 400
+$bodyFont: 'Karla', sans-serif; // weights 400, 700
+
+// Reset
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// Extensions
+%button {
+  padding: 8px 30px;
+}
+
+%flex {
+  display: flex;
+  align-items: center;
+}
+
+// Mixins
+@mixin flexCenter {
+  @extend %flex;
+  justify-content: center;
+}
+
+@mixin mq($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+// Color function
+@function setTextColor($color) {
+  @if(lightness($color) > 50) {
+    @return $veryDarkViolet;
+  } @else {
+    @return #fefefe;
+  }
+}

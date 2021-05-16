@@ -1,0 +1,109 @@
+// Base 
+html, body {
+  font-family: $bodyFont;
+  color: setTextColor(#fefefe);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headingsFont;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+i {
+  color: $darkGrayishViolet;
+}
+
+i:hover {
+  color: setTextColor($veryLightGray);
+}
+
+ul {
+  list-style-type: none;
+}
+
+// container
+.container {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+@include mq(800px) {
+  .container {
+    width: 90%;
+  }
+}
+
+// cta btns
+.btn {
+  @extend %button;
+  border: 2px solid #fefefe;
+  color: #fefefe;
+}
+
+.btn:hover {
+  background-color: #fefefe;
+  color: setTextColor(#fefefe);
+}
+
+.btn-header {
+  @extend %button;
+  border: 2px solid #333;
+  color: $veryDarkViolet;
+}
+
+.btn-header:hover {
+  background-color: $veryDarkViolet;
+  color: setTextColor($veryDarkViolet);
+}
+
+// accent bar
+.bar {
+  height: 2px;
+  width: 156px;
+  margin-bottom: 60px;
+}
+
+// about us cards
+.card {
+  margin-bottom: 130px;
+
+  img {
+    padding-bottom: 2rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+    padding-bottom: 1.2rem;
+  }
+
+  p {
+    text-align: left;
+    color: $darkGrayishViolet;
+    font-weight: 700;
+  }
+}
+
+@include mq(800px) {
+  .card {
+    text-align: center;
+    margin-bottom: 20px;
+
+    p {
+      text-align: center;
+      line-height: 1.5;
+    }
+  }
+}
+
+// show (for mobile)
+.show {
+  visibility: visible;
+}

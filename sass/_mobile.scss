@@ -1,0 +1,238 @@
+@include mq(800px) {
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  // Header
+  .header.mobile {
+    position: relative;
+
+    .navbar {
+      visibility: hidden;
+    }
+    
+    .menu-toggle {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+
+      img#open {
+        display: block;
+      }
+  
+      img#close {
+        display: none;
+      }
+    }
+  }
+
+  // Header Mobile Menu Active
+  .header.mobile.active {
+
+    .navbar {
+      visibility: visible;
+      width: 100%;
+      height: calc(100vh - 80px);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 80px;
+      background-color: $veryDarkViolet;
+      z-index: 100;
+      
+      ul {
+        flex-direction: column;
+        margin-top: 40px;
+        
+        li {
+          margin: 20px 0;
+          
+          a {
+            color: setTextColor($veryDarkViolet);
+            font-size: 1.3rem;
+          }
+
+          a:active, a:visited {
+            color: #fefefe;
+          }
+
+
+          a.btn-header {
+            padding: 10px 90px;
+            border-color: #fefefe;
+            min-width: 80%;
+          }
+        }
+      }
+
+    }
+
+    .menu-toggle {
+      img#open {
+        display: none;
+      }
+
+      img#close {
+        display: block;
+      }
+    }
+
+    .navbar::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-image: url('../images/bg-pattern-mobile-nav.svg');
+      background-repeat: no-repeat;
+      width: 375px;
+      height: 218px;
+      z-index: 100;
+    }
+  }
+
+
+  .main.mobile {
+    // Hero 
+    .hero {
+      height: 100%;
+      padding-bottom: 100px;
+
+      &-flex-container {
+        flex-direction: column-reverse;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+
+        img.desktop {
+          display: none;
+        }
+        img.mobile {
+          display: block;
+          object-fit: cover;
+          margin: 0;
+        }
+      
+        .hero-info {
+          text-align: center;
+          width: 100%;
+          margin-top: 85px;
+
+          h1, p {
+            padding-right: 0;
+            text-align: center;
+          }
+
+          h1 {
+            font-size: 3.3rem;
+          } 
+
+          .bar {
+            visibility: hidden;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .hero::before {
+      background-image: url('../images/bg-pattern-intro-left-mobile.svg');
+      right: auto;
+      left: 0;
+      top: 451px;
+      width: 168px;
+      height: 165px;
+    }
+
+    .hero::after {
+      background-image: url('../images/bg-pattern-intro-right-mobile.svg');
+      left: auto;
+      right: 0;
+      top: 852px;
+      width: 124px;
+      height: 330px;
+    } 
+
+    // About (We're Different)
+    .about {
+      &-heading {
+        text-align: center;
+        margin-top: 150px;
+  
+        h2 {
+          font-size: 3rem;
+        }
+  
+        .bar {
+          margin: 0 auto 50px;
+        }
+      }
+
+      &-flex-container {
+        flex-direction: column;
+
+        // Card Contents in _utilities.scss
+      }
+    }
+
+    // CTA (how we work)
+    .cta {
+      height: 100%;
+      padding: 80px 20px;
+      margin-top: 130px;
+
+      &-flex-container {
+        flex-direction: column;
+        margin: 0;
+
+        h2 {
+          font-size: 2.3rem;
+          text-align: center;
+          padding-bottom: 30px;
+        }
+      }
+
+      &-heading-container {
+        padding: 0;
+      }
+    }
+
+    .cta::before {
+      background-image: url('../images/bg-pattern-how-we-work-mobile.svg');
+      width: 176px;
+      height: 317px;
+    }
+  }
+
+  .footer.mobile {
+
+    .footer-header {
+      flex-direction: column;
+      gap: 25px;
+      padding: 85px 0 40px;
+
+      .social-nav-container {
+        z-index: 2;
+      }
+    }
+
+    .footer-body-grid {
+      h6 {
+        font-size: 1.1rem;
+      }
+
+      grid-template-columns: 1fr;
+      text-align: center;
+      font-size: 1.3rem;
+    }
+  }
+
+  .footer.mobile::before{
+    background-image: url('../images/bg-pattern-footer-mobile.svg');
+    width: 374px;
+    height: 173px;
+    z-index: 1;
+  }
+}
